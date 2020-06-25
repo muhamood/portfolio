@@ -1,8 +1,6 @@
 {
-  "homepage": "http://muhamood.github.io/portfolio"
-}
 
-{
+  "homepage": "http://muhamood.github.io/portfolio",
   "name": "portfolio256",
   "version": "0.1.0",
   "private": true,
