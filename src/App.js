@@ -1,33 +1,24 @@
 import React from 'react';
-import './App.css';
-import { Layout, Header, Navigation, Drawer, Content } from 'react-mdl';
-import { Link } from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import {LandingPage} from './components/landing';
+import {Resume} from './components/resume';
+import AboutMe from './components/aboutme';
+import {Contact} from './components/contact';
+import Navbar from './components/navbar';
 
-
-function App() {
-  return (
-    <div style={{height: '638px', position: 'relative'}}>
-    <Layout style={{background: 'url(http://www.getmdl.io/assets/demos/transparent.jpg) center / cover'}}>
-        <Header transparent title="Title" style={{color: 'white'}}>
-            <Navigation>
-                <a href="#">Landing Page</a>
-                <a href="#">Resume</a>
-                <a href="#">About Me</a>
-                <a href="#">Contact</a>
-            </Navigation>
-        </Header>
-        <Drawer title="Title">
-            <Navigation>
-                <a href="#">Landing Page</a>
-                <a href="#">Resume</a>
-                <a href="#">About Me</a>
-                <a href="#">Contact</a>
-            </Navigation>
-        </Drawer>
-        <Content />
-    </Layout>
-</div>
-  );
-}
-
+ const App = () =>{
+ 	return(
+   <Router>
+    <div className ="App">
+     <Navbar/>
+     <Switch>
+ 	   <Route exact path ='/' component ={LandingPage}/>
+         <Route path ='/resume' component ={Resume}/>
+         <Route path ='/aboutme' component ={AboutMe}/>
+         <Route path ='/contact' component ={Contact}/>
+     </Switch>
+    </div>
+  </Router>
+	);
+	  }    
 export default App;
